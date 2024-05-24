@@ -14,10 +14,18 @@ const products = [
   { product: 'tea', price: '' },
 ];
 
-//Using the forEach method to match a name and a specific province
-names.forEach((name, index) => {
+//Names
+names.forEach((name) => {
   console.log(name);
-  console.log(provinces[index]);
+});
+
+//Provinces
+provinces.forEach((province) => {
+  console.log(province);
+});
+
+//Names and provinces altogether. 
+names.forEach((name, index) => {
   console.log(`${name} (${provinces[index]})`);
 });
 
@@ -39,5 +47,25 @@ const nonCapeProvinces = provinces.filter(province => !province.includes('Cape')
 console.log(nonCapeProvinces.length);
 
 //Boolean Array
-const containsS = names.map(name => name.includes('S') || name.includes('s'));
+const containsS = names.map(name => name.includes('S') || name.includes('S'));
 console.log(containsS);
+
+//Creating Object Mapping
+const nameProvinceMap = names.reduce((acc, name, index) => {
+  acc[name] = provinces[index];
+  return acc;
+}, {});
+console.log(nameProvinceMap);
+
+
+//Log Products
+console.log(products.forEach(product => console.log(product.product)));
+
+//Filter by Name Length
+console.log(products.filter(product => product.product.length <= 5));
+
+// 3. Price Manipulation
+/*const validProducts = products.filter(product => product.price.trim() !== '');
+const total = validProducts.reduce((acc, product) => acc + Number(product.price), 0);
+console.log(total);*/
+
