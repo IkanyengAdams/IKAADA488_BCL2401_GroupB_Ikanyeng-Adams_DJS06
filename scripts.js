@@ -15,9 +15,20 @@ const products = [
 ];
 
 //Using the forEach method to match a name and a specific province
-
 names.forEach((name, index) => {
   console.log(name);
   console.log(provinces[index]);
   console.log(`${name} (${provinces[index]})`);
 });
+
+//Uppercase transformation
+const upperCaseProvinces = provinces.map(province => province.toUpperCase());
+console.log(upperCaseProvinces);
+
+//Name Lengths
+const nameLengths = names.map(name => name.length);
+console.log(nameLengths);
+
+//sorting
+const sortedProvinces = [...provinces].sort();
+console.log(sortedProvinces);
