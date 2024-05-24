@@ -32,3 +32,12 @@ console.log(nameLengths);
 //sorting
 const sortedProvinces = [...provinces].sort();
 console.log(sortedProvinces);
+
+
+//Filtering Cape
+const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
+console.log(nonCapeProvinces.length);
+
+//Boolean Array
+const containsS = names.map(name => name.includes('S') || name.includes('s'));
+console.log(containsS);
