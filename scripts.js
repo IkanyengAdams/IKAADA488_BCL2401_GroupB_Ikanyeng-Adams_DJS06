@@ -74,3 +74,11 @@ console.log(total);
 const concatenatedNames = products.reduce((acc, product) => acc + product.product, '');
 console.log(concatenatedNames);
 
+//Find Extremes in Prices using .filter method
+const prices = products.filter(product => String(product.price).trim() !== '').map(product => Number(product.price));
+const highestPrice = Math.max(...prices);
+const lowestPrice = Math.min(...prices);
+console.log(`Highest: ${highestPrice}. Lowest: ${lowestPrice}`);
+
+
+
