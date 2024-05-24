@@ -47,7 +47,7 @@ const nonCapeProvinces = provinces.filter(province => !province.includes('Cape')
 console.log(nonCapeProvinces.length);
 
 //Boolean Array
-const containsS = names.map(name => name.includes('S') || name.includes('S'));
+const containsS = names.map(name => name.includes('S'));
 console.log(containsS);
 
 //Creating Object Mapping
@@ -59,13 +59,13 @@ console.log(nameProvinceMap);
 
 
 //Log Products
-console.log(products.forEach(product => console.log(product.product)));
+products.forEach(product => console.log(product.product));
 
 //Filter by Name Length
-console.log(products.filter(product => product.product.length <= 5));
+const filteredProducts = products.filter(product => product.product.length <= 5);
+console.log(filteredProducts);
 
-// 3. Price Manipulation
-/*const validProducts = products.filter(product => product.price.trim() !== '');
+//Price Manipulation
+const validProducts = products.filter(product => String(product.price).trim() !== '');
 const total = validProducts.reduce((acc, product) => acc + Number(product.price), 0);
-console.log(total);*/
-
+console.log(total);
