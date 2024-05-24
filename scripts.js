@@ -14,12 +14,12 @@ const products = [
   { product: 'tea', price: '' },
 ];
 
-//Names
+//Names using the forEach method
 names.forEach((name) => {
   console.log(name);
 });
 
-//Provinces
+//Provinces using the forEach method
 provinces.forEach((province) => {
   console.log(province);
 });
@@ -29,24 +29,24 @@ names.forEach((name, index) => {
   console.log(`${name} (${provinces[index]})`);
 });
 
-//Uppercase transformation
+//Uppercase transformation on the provinces
 const upperCaseProvinces = provinces.map(province => province.toUpperCase());
 console.log(upperCaseProvinces);
 
-//Name Lengths
+//Name Lengths how many letters each name consist of.
 const nameLengths = names.map(name => name.length);
 console.log(nameLengths);
 
-//sorting
+//sorting the provinces alphabetically
 const sortedProvinces = [...provinces].sort();
 console.log(sortedProvinces);
 
 
-//Filtering Cape
+//Filtering Cape:  remove provinces containing "Cape"
 const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
 console.log(nonCapeProvinces.length);
 
-//Boolean Array
+//Boolean Array: Names containing the letter 'S'
 const containsS = names.map(name => name.includes('S'));
 console.log(containsS);
 
@@ -79,6 +79,13 @@ const prices = products.filter(product => String(product.price).trim() !== '').m
 const highestPrice = Math.max(...prices);
 const lowestPrice = Math.min(...prices);
 console.log(`Highest: ${highestPrice}. Lowest: ${lowestPrice}`);
+
+//Object Transformation: recreating the products object with keys 'name' and 'cost'
+const transformedProducts = products.reduce((acc, product) => {
+  acc[product.product] = { name: product.product, cost: product.price };
+  return acc;
+}, {});
+console.log(transformedProducts);
 
 
 
