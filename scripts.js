@@ -69,3 +69,8 @@ console.log(filteredProducts);
 const validProducts = products.filter(product => String(product.price).trim() !== '');
 const total = validProducts.reduce((acc, product) => acc + Number(product.price), 0);
 console.log(total);
+
+//Concatenate Product Names
+const concatenatedNames = products.reduce((acc, product) => acc + product.product, '');
+console.log(concatenatedNames);
+
